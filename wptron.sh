@@ -14,4 +14,4 @@ adduser $sftp_user $sftp_group
 cp index.html $public_dir/index.html
 chown -R $sftp_user:$sftp_user $box_dir
 chmod 755 $box_dir
-caddy file-server --root $public_dir --domain $domain
+caddy file-server --root $public_dir --listen :80
