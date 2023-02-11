@@ -4,7 +4,7 @@
 			"servers": {
 				"cafelutsa.ro": {
 					"listen": [
-						":80"
+						":443"
 					],
 					"routes": [
 						{
