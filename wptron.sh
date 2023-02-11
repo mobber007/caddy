@@ -2,16 +2,17 @@ sftp_user="${1//./}"
 sftp_password="$(tr -dc A-Za-z0-9 </dev/urandom | head -c 13 ; echo '')"
 echo $sftp_password > "$sftp_user.log"
 sftp_group="sudo"
-domain=default
 home_dir="/home/$sftp_user"
-box_dir="$home_dir/box"
-public_dir="$box_dir/$domain/public"
-
+static_dir="/var/www/static/"
+wp_dir="/var/www/wp/"
+mkdir -p $static_dir
+cp index.html $static_dir/index.html
+mkdir -p $wp_dir
+chown -R www-data:www-data /var/www
 useradd $sftp_user
-mkdir -p $public_dir
+mkdir -p $home_dir
 echo -e "$sftp_password\n$sftp_password" | passwd $sftp_user
 adduser $sftp_user $sftp_group
-cp index.html $public_dir/index.html
-chown -R $sftp_user:$sftp_user $box_dir
-chmod 755 $box_dir
-caddy file-server --root $public_dir --listen :80
+chown -R $sftp_user:$sftp_user $home_dir
+
+

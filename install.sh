@@ -1,5 +1,6 @@
-ufw allow 80
-ufw allow 443
+ufw allow http
+ufw allow https
+ufw reload
 bash sftp.sh
 bash wptron.sh
-bash caddy.sh
+bash caddy.sh  > /dev/null 2>&1

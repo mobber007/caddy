@@ -11,7 +11,8 @@
 							"match": [
 								{
 									"host": [
-										"localhost"
+										"app.chatgpt.ro",
+										"chatgpt.ro"
 									]
 								}
 							],

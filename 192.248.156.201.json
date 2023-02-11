@@ -11,7 +11,8 @@
 							"match": [
 								{
 									"host": [
-										"localhost"
+										"cafelutsa.ro",
+										"app.cafelutsa.ro"
 									]
 								}
 							],
