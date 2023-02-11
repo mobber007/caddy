@@ -2,14 +2,18 @@
 	"apps": {
 		"http": {
 			"servers": {
-				"example": {
-					"listen": [":80"],
+				"cafelutsa.ro": {
+					"listen": [
+						":80"
+					],
 					"routes": [
 						{
-							"handle": [{
-								"handler": "static_response",
-								"body": "Hello, world!"
-							}]
+							"handle": [
+								{
+									"handler": "static_response",
+									"body": "Hello, world!"
+								}
+							]
 						}
 					]
 				}
