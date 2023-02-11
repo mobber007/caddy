@@ -7,7 +7,7 @@ if ! grep -q "Match Group $sftp_group" $ssh_config_file
 then
     cat <<EOT >> $ssh_config_file
 Match Group $sftp_group
-ChrootDirectory /home/%u/sites
+ChrootDirectory /home/%u/$sftp_group
 ForceCommand internal-sftp
 PasswordAuthentication yes
 PermitTunnel no

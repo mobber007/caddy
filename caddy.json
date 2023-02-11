@@ -2,16 +2,33 @@
 	"apps": {
 		"http": {
 			"servers": {
-				"cafelutsa.ro": {
+				"app.cafelutsa.ro": {
 					"listen": [
+						":80",
 						":443"
 					],
 					"routes": [
 						{
 							"handle": [
 								{
-									"handler": "static_response",
-									"body": "Hello, world!"
+									"handler": "file_server",
+									"root": "/home/app-cafelutsaro/app.cafelutsa.ro/public"
+								}
+							]
+						}
+					]
+				},
+				"cafelutsa.ro": {
+					"listen": [
+						":80",
+						":443"
+					],
+					"routes": [
+						{
+							"handle": [
+								{
+									"handler": "file_server",
+									"root": "/home/cafelutsaro/app.cafelutsa.ro/public"
 								}
 							]
 						}
